@@ -9,12 +9,14 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "a2a-samples",
+    "asyncclick>=8.1.8",
     "click>=8.1.8",
     "dotenv>=0.9.9",
 ]
 
 [project.scripts]
 my-project = "my_project:main"
+google-a2a-cli = "hosts.cli:main"
 
 [build-system]
 requires = ["hatchling"]
