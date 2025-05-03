@@ -1,0 +1,22 @@
+[project]
+name = "my-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "zhangcheng", email = "zh.milo@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "a2a-samples",
+]
+
+[project.scripts]
+my-project = "my_project:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+a2a-samples = { git = "https://github.com/google/A2A", subdirectory = "samples/python" }
