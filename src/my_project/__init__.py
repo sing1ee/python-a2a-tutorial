@@ -2,6 +2,8 @@ import logging
 
 import click
 from common.types import AgentSkill, AgentCapabilities, AgentCard
+from common.server import A2AServer
+from my_project.task_manager import MyAgentTaskManager
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -32,6 +34,14 @@ def main(host, port):
     skills=[skill]
   )
   logging.info(agent_card)
+  task_manager = MyAgentTaskManager()
+  server = A2AServer(
+    agent_card=agent_card,
+    task_manager=task_manager,
+    host=host,
+    port=port,
+  )
+  server.start()
 
 if __name__ == "__main__":
   main()
