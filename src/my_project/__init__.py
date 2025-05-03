@@ -22,7 +22,7 @@ def main(host, port):
     outputModes=["text"],
   )
   logging.info(skill)
-  capabilities = AgentCapabilities()
+  capabilities = AgentCapabilities(streaming=True)
   agent_card = AgentCard(
     name="Echo Agent",
     description="This agent echos the input given",
@@ -31,7 +31,7 @@ def main(host, port):
     defaultInputModes=["text"],
     defaultOutputModes=["text"],
     capabilities=capabilities,
-    skills=[skill]
+    skills=[skill],
   )
   logging.info(agent_card)
   task_manager = MyAgentTaskManager()
